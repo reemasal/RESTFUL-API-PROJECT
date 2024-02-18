@@ -13,4 +13,4 @@ blp = Blueprint("Books", __name__, description="Operations on book ratings")
 class BookList(MethodView):
     @blp.response(200, BookDetailsSchema(many=True))
     def get(self):
-        return BookModel.query.rating()
+        return BookModel.query.Rating()

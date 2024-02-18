@@ -4,8 +4,8 @@ from flask_smorest import Blueprint, abort
 from db import db
 from sqlalchemy.exc import SQLAlchemyError
 
-from models import BookModel
-from schemas import BookDetailsSchema
+from models import RateModel
+from schemas import RatingsSchema
 
 blp = Blueprint("Books", __name__, description="Operations on book ratings")
 

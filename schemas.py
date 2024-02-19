@@ -2,7 +2,7 @@ from marshmallow import Schema, fields
 
 
 class BookDetailsSchema(Schema):
-    ISBN = fields.Str(required=True)
+    ISBN = fields.Str(required=True) # book id
     Name = fields.Str()
     Description = fields.Str()
     Price = fields.Int()
@@ -25,3 +25,9 @@ class ProfileManagement(Schema):
     CreditCardExpYear = fields.Int()
     CreditCardSecurityCode = fields.Str()
     CreditCardZipCode = fields.Int()
+
+class RatingsSchema(Schema):
+    Rating = fields.Int()
+    ISBN = fields.Str(required=True) # book id
+    userID = fields.Str(required=True)
+    comment = fields.Str()

@@ -1,0 +1,6 @@
+Username,Password,Name,EmailAddress,HomeAddress,CreditCardName,CreditCardNumber,CreditCardExpMonth,CreditCardExpYear,CreditCardSecurityCode,CreditCardZipCode
+john_doe,12345,John Doe,johndoe@example.com,123 Maple Street,Visa,4111111111111111,12,2024,123,12345
+jane_smith,abcd,Jane Smith,janesmith@example.com,456 Elm Street,MasterCard,5500000000000004,6,2025,456,67890
+alice_johnson,securepass,Alice Johnson,alicej@example.com,789 Pine Street,American Express,340000000000009,11,2023,789,10112
+bob_williams,password,Bob Williams,bobw@example.net,101 Oak Street,Discover,6011000000000004,8,2026,101,13145
+nelson,nelson1111,Nelson Saroza,nelson@jj.net,380 Dark Line,Amex,9493000000000004,5,2029,332,33913

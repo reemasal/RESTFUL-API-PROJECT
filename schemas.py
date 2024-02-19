@@ -13,6 +13,19 @@ class BookDetailsSchema(Schema):
     Sold =fields.Int()
     Rating = fields.Int()
 
+class ProfileManagement(Schema):
+    Username = fields.Str(required = True)
+    Password = fields.Str(required = True)
+    Name = fields.Str()
+    EmailAddress = fields.Str()
+    HomeAddress = fields.Str()
+    CreditCardName = fields.Str()
+    CreditCardNumber = fields.Str()
+    CreditCardExpMonth = fields.Int()
+    CreditCardExpYear = fields.Int()
+    CreditCardSecurityCode = fields.Str()
+    CreditCardZipCode = fields.Int()
+
 class RatingsSchema(Schema):
     RatingDate = fields.Str()
     Rating = fields.Int()

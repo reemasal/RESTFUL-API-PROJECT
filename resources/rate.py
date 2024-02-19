@@ -13,4 +13,4 @@ blp = Blueprint("Ratings", __name__, description="Operations on book ratings and
 class BookList(MethodView):
     @blp.response(200, RatingsSchema(many=True))
     def get(self):
-        return RateModel.query.Rating()
+        return RateModel.query.all()

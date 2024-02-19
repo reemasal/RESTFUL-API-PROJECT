@@ -7,10 +7,10 @@ from sqlalchemy.exc import SQLAlchemyError
 from models import RateModel
 from schemas import RatingsSchema
 
-blp = Blueprint("Books", __name__, description="Operations on book ratings")
+blp = Blueprint("Ratings", __name__, description="Operations on book ratings and comments")
 
 @blp.route("/rating")
 class BookList(MethodView):
-    @blp.response(200, BookDetailsSchema(many=True))
+    @blp.response(200, RatingsSchema(many=True))
     def get(self):
-        return BookModel.query.Rating()
+        return RateModel.query.Rating()

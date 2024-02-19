@@ -16,5 +16,6 @@ class BookDetailsSchema(Schema):
 class RatingsSchema(Schema):
     Rating = fields.Int()
     ISBN = fields.Str(required=True) # book id
-    userID = fields.Str(required=True)
+    userID = fields.Int()
+    commentDate = fields.Str()
     comment = fields.Str()

@@ -29,7 +29,7 @@ class ProfileManagement(Schema):
 class RatingsSchema(Schema):
     RatingDate = fields.Str()
     Rating = fields.Int()
-    ISBN = fields.Str(required=True) # book id
-    UserID = fields.Str(required=True)
+    ISBN = fields.Str() # book id
+    UserID = fields.Str()
     CommentDate = fields.Str()
     Comment = fields.Str()

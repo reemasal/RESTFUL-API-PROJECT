@@ -16,22 +16,3 @@ class WishlistGet(MethodView):
     def get(self, wishlistID):
         response = WishlistModel.query.get_or_404(wishlistID)
         return response
-
-
-
-# create wishlist that belongs to user and has unique name
-# request type: POST
-# params sent: wishlist id, user id
-#@blp.route('wishlist/new', methods = ['POST'])
-#def postNewWishlist():
-
-# add book to wishlist
-# request type: POST
-# params sent: isbn, wishlist id
-#@blp.route('/wishlist/add', methods = ['POST'])
-#def postBook():
-    
-# remove a book from wishlist 
-# (then add to shopping cart? logic doesn't specify it must be in cart)
-# @blp.route('/wishlist/delete', methods = ['DELETE'])
-#def deleteBook():

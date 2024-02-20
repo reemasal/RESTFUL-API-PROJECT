@@ -1,6 +1,5 @@
 from marshmallow import Schema, fields
 
-
 class BookDetailsSchema(Schema):
     ISBN = fields.Str(required=True) # book id
     Name = fields.Str()
@@ -27,14 +26,13 @@ class ProfileManagement(Schema):
     CreditCardZipCode = fields.Int()
 
 class RatingsSchema(Schema):
-    UserID = fields.Str(required = True)
-    ISBN = fields.Str() # book id
-    RatingDate = fields.Str()
     Rating = fields.Int()
-    CommentDate = fields.Str()
-    Comment = fields.Str()
+    ISBN = fields.Str(required=True) # book id
+    userID = fields.Str(required=True)
+    comment = fields.Str()
 
-class WishlistSchema(Schema):
+# need to pull then add mine later
+class WishlistSchema(Schema):     # list of books by wishlists
     WishlistID = fields.Int(required=True)
     ISBN0 = fields.Str()
     ISBN1 = fields.Str()

@@ -18,8 +18,8 @@ with open(csv_file_path, 'r', encoding='utf-8') as csv_file:
     # Insert data into the table
     for row in csv_reader:
         cursor.execute('''
-            INSERT INTO wishlist_model (WishlistID, UserID, Books)
-            VALUES (?, ?, ?);
+            INSERT INTO wishlist_model (WishlistID, ISBN0, ISBN1, ISBN2)
+            VALUES (?, ?, ?, ?);
             ''', row)
 
 # Commit the changes and close the connection

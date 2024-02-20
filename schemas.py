@@ -27,9 +27,9 @@ class ProfileManagement(Schema):
     CreditCardZipCode = fields.Int()
 
 class RatingsSchema(Schema):
+    ISBN = fields.Str(required = True) # book id
     RatingDate = fields.Str()
     Rating = fields.Int()
-    ISBN = fields.Str() # book id
     UserID = fields.Str()
     CommentDate = fields.Str()
     Comment = fields.Str()

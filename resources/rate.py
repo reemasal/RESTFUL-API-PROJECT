@@ -9,8 +9,9 @@ from schemas import RatingsSchema
 
 blp = Blueprint("Ratings", __name__, description="Operations on book ratings and comments")
 
-@blp.route("/rating")
-class BookList(MethodView):
+@blp.route("/ratings")
+class RatingList(MethodView):
     @blp.response(200, RatingsSchema(many=True))
     def get(self):
         return RateModel.query.all()
+        

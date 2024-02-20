@@ -7,7 +7,7 @@ cursor = conn.cursor()
 
 
 # Path to your CSV file
-csv_file_path = './ratings.csv' # change this
+csv_file_path = './ratings.csv'
 
 # Open and read the CSV file
 with open(csv_file_path, 'r', encoding='utf-8') as csv_file:
@@ -19,7 +19,7 @@ with open(csv_file_path, 'r', encoding='utf-8') as csv_file:
     # Insert data into the table
     for row in csv_reader:
         cursor.execute('''
-            INSERT INTO rate_model (RatingDate, Rating, ISBN, UserID, CommentDate, Comment)
+            INSERT INTO rate_model (UserID, ISBN, RatingDate, Rating, CommentDate, Comment)
             VALUES (?, ?, ?, ?, ?, ?)
             ''', row)
 

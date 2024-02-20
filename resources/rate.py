@@ -14,4 +14,3 @@ class RatingList(MethodView):
     @blp.response(200, RatingsSchema(many=True))
     def get(self):
         return RateModel.query.all()
-        

@@ -33,3 +33,15 @@ class RatingsSchema(Schema):
     UserID = fields.Str(required=True)
     CommentDate = fields.Str()
     Comment = fields.Str()
+
+
+class CartItemAddSchema(Schema):
+    UserID = fields.Str(required=True)
+    BookID = fields.Str(required=True)
+    Quantity = fields.Int(required=True, validate=lambda n: n > 0)
+
+class CartItemRemoveSchema(Schema):
+    CartItemID = fields.Str(required=True)
+
+class UserIDSchema(Schema):
+    UserID = fields.Str(required=True)

@@ -7,7 +7,7 @@ cursor = conn.cursor()
 
 
 # Path to your CSV file
-csv_file_path = 'scripts/ratings.csv'
+csv_file_path = './ratings.csv'
 
 # Open and read the CSV file
 with open(csv_file_path, 'r', encoding='utf-8') as csv_file:

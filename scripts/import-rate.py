@@ -19,7 +19,7 @@ with open(csv_file_path, 'r', encoding='utf-8') as csv_file:
     # Insert data into the table
     for row in csv_reader:
         cursor.execute('''
-            INSERT OR IGNORE INTO rate_model (ISBN, RatingDate, Rating, UserID, CommentDate, Comment)
+            INSERT INTO rate_model (UserID, ISBN, RatingDate, Rating, CommentDate, Comment)
             VALUES (?, ?, ?, ?, ?, ?)
             ''', row)
 

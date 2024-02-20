@@ -4,26 +4,45 @@ from flask_smorest import Blueprint, abort
 from db import db
 from sqlalchemy.exc import SQLAlchemyError
 
-from models import BookModel
-from schemas import CartItemAddSchema, CartItemRemoveSchema, UserIDSchema
-from flask import Blueprint, jsonify, request
 from models.shopping_model import add_book_to_cart, remove_book_from_cart, calculate_cart_subtotal
+from schemas import CartItemAddSchema, CartItemRemoveSchema, UserIDSchema
 
-shopping_cart_bp = Blueprint('shopping_cart', __name__)
+blp = Blueprint('ShoppingCart', __name__, description="Operations on the shopping cart")
 
-@shopping_cart_bp.route('/add_to_cart', methods=['POST'])
-def add_to_cart():
-    data = request.get_json()
-    add_book_to_cart(data['UserID'], data['BookID'], data['Quantity'])
-    return jsonify({'message': 'Book added to cart successfully'}), 201
+# Add to Cart
+@blp.route("/add_to_cart")
+class AddToCart(MethodView):
 
-@shopping_cart_bp.route('/remove_from_cart', methods=['DELETE'])
-def remove_from_cart():
-    data = request.get_json()
-    remove_book_from_cart(data['CartItemID'])
-    return jsonify({'message': 'Book removed from cart successfully'}), 200
+    @blp.arguments(CartItemAddSchema)
+    @blp.response(201, CartItemAddSchema)
+    def post(self, cart_item_data):
+        try:
+            add_book_to_cart(**cart_item_data)
+            return {"message": "Book added to cart successfully"}
+        except SQLAlchemyError as e:
+            abort(400, message=str(e))
 
-@shopping_cart_bp.route('/cart_subtotal/<int:user_id>')
-def cart_subtotal(user_id):
-    subtotal = calculate_cart_subtotal(user_id)
-    return jsonify({'subtotal': subtotal}), 200
+# Remove from Cart
+@blp.route("/remove_from_cart")
+class RemoveFromCart(MethodView):
+
+    @blp.arguments(CartItemRemoveSchema)
+    @blp.response(200, CartItemRemoveSchema)
+    def delete(self, cart_item_data):
+        try:
+            remove_book_from_cart(**cart_item_data)
+            return {"message": "Book removed from cart successfully"}
+        except SQLAlchemyError as e:
+            abort(400, message=str(e))
+
+# Cart Subtotal
+@blp.route("/cart_subtotal/<int:user_id>")
+class CartSubtotal(MethodView):
+
+    @blp.response(200)
+    def get(self, user_id):
+        try:
+            subtotal = calculate_cart_subtotal(user_id)
+            return {"subtotal": subtotal}
+        except SQLAlchemyError as e:
+            abort(400, message=str(e))

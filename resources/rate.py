@@ -12,9 +12,9 @@ blp = Blueprint("Ratings", __name__, description="Operations on book ratings and
 @blp.route("/book-rating/<string:ISBN>")
 class RatingList(MethodView):
     @blp.response(200, RatingsSchema(many=True))
-    def get(self, isbn):
+    def get(self, ISBN):
         # Assuming RateModel returns a list of ratings for a given ISBN
-        ratings = RateModel.query.filter_by(isbn=isbn).all()
+        ratings = RateModel.query.filter_by(ISBN=ISBN).all()
         if not ratings:
             # Assuming RateModel does not have a built-in method get_or_404()
             return {'message': 'Ratings not found'}, 404

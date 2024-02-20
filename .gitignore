@@ -6,4 +6,4 @@ instructions.md
 
 **/__pycache__
 
-./instance
+instance/*

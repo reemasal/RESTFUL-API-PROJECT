@@ -2,7 +2,7 @@ import sqlite3
 import csv
 
 # Connect to the SQLite database
-conn = sqlite3.connect('../instance/dataWL.db')
+conn = sqlite3.connect('../instance/data.db')
 cursor = conn.cursor()
 
 # Path to your CSV file
@@ -18,7 +18,7 @@ with open(csv_file_path, 'r', encoding='utf-8') as csv_file:
     # Insert data into the table
     for row in csv_reader:
         cursor.execute('''
-            INSERT INTO wishlist_model (WishlistID, ISBN0, ISBN1, ISBN2)
+            INSERT OR IGNORE INTO wishlist_model (WishlistID, ISBN0, ISBN1, ISBN2)
             VALUES (?, ?, ?, ?);
             ''', row)
 

@@ -7,10 +7,10 @@ from sqlalchemy.exc import SQLAlchemyError
 from models import ProfileModel
 from schemas import ProfileManagement
 
-blp = Blueprint("Profiles", __name__, description="Profiles details")
+blp = Blueprint("Profile", __name__, description="Profiles details")
 
 @blp.route("/profiles")
-class BookList(MethodView):
+class Profiles(MethodView):
     @blp.response(200, ProfileManagement(many=True))
     def get(self):
         return ProfileModel.query.all()

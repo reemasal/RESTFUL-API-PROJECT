@@ -10,6 +10,7 @@ import models
 from resources.book import blp as BookBlueprint
 from resources.profile import blp as ProfileBlueprint
 from resources.rate import blp as RatingBlueprint
+from resources.wishlist import blp as WishlistBlueprint
 
 def create_app(db_url=None):
     app = Flask(__name__)

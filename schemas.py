@@ -33,3 +33,9 @@ class RatingsSchema(Schema):
     Rating = fields.Int()
     CommentDate = fields.Str()
     Comment = fields.Str()
+
+class WishlistSchema(Schema):
+    WishlistID = fields.Int(required=True)
+    ISBN0 = fields.Str()
+    ISBN1 = fields.Str()
+    ISBN2 = fields.Str()

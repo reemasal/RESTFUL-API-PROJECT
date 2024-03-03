@@ -18,6 +18,6 @@ class RatingList(MethodView):
 @blp.route("/ratings/<string:isbn>")
 class BookListItem(MethodView): # get all comments for one book
     @blp.response(200, RatingsSchema(many=True))
-    def get(self, comment):
-        response = RateModel.query.get_or_404(comment)
+    def get(self, isbn, comment):
+        response = RateModel.query.get_or_404(isbn, comment)
         return response

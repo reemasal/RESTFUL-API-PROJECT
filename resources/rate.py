@@ -18,6 +18,16 @@ class RatingList(MethodView):
 @blp.route("/ratings/<string:isbn>")
 class BookListItem(MethodView): # get all comments for one book
     @blp.response(200, RatingsSchema(many=True))
-    def get(self, isbn, comment):
-        response = RateModel.query.get_or_404(isbn, comment)
-        return response
+    def get(self, isbn):
+        try:
+            # Fetch comments for the specified ISBN
+            comments = RateModel.query.filter_by(isbn=isbn).all()
+
+            # Serialize comments using schema
+            comments_data = RatingsSchema(many=True).dump(comments)
+
+            # Return comments in JSON format
+            return jsonify(comments_data)
+        except SQLAlchemyError:
+            # Handle any database errors
+            abort(500, message="Database error occurred.")

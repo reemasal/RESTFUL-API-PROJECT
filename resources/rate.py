@@ -20,12 +20,15 @@ class BookListItem(MethodView): # get all comments for one book
     @blp.response(200, RatingsSchema(many=True))
     def get(self, isbn):
         try:
+            print("Before comments\n")
             # Fetch comments for the specified ISBN
-            comments = RateModel.query.filter_by(isbn=isbn).all()
+            comments = RateModel.query.filter_by(ISBN=isbn).all()
 
+            print("Before comments_data\n")
             # Serialize comments using schema
             comments_data = RatingsSchema(many=True).dump(comments)
 
+            print("Before return statement\n")
             # Return comments in JSON format
             return jsonify(comments_data)
         except SQLAlchemyError:

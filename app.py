@@ -37,3 +37,5 @@ def create_app(db_url=None):
     api.register_blueprint(WishlistBlueprint)
 
     return app
+ 
+"test code"

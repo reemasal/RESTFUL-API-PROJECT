@@ -35,7 +35,7 @@ class RatingsSchema(Schema):
     Comment = fields.Str()
 
 class WishlistSchema(Schema):
-    WishlistID = fields.Int(required=True)
+    WishlistID = fields.Str(required=True)
     Username = fields.Str()
     ISBN0 = fields.Str()
     ISBN1 = fields.Str()

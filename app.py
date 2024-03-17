@@ -8,7 +8,8 @@ from db import db
 import models
 
 from resources.book import blp as BookBlueprint
-from resources.profile import blp as ProfileBlueprint
+from resources.profile import profile_blp as ProfileBlueprint
+from resources.profile import new_user_blp as NewUserBlueprint
 from resources.rate import blp as RatingBlueprint
 from resources.wishlist import blp as WishlistBlueprint
 
@@ -35,5 +36,6 @@ def create_app(db_url=None):
     api.register_blueprint(RatingBlueprint)
     api.register_blueprint(ProfileBlueprint)
     api.register_blueprint(WishlistBlueprint)
+    api.register_blueprint(NewUserBlueprint)
 
     return app

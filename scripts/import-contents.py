@@ -7,7 +7,7 @@ cursor = conn.cursor()
 
 
 # Path to your CSV file
-csv_file_path = './wishlists.csv'
+csv_file_path = './contents.csv'
 
 # Open and read the CSV file
 with open(csv_file_path, 'r', encoding='utf-8') as csv_file:
@@ -19,8 +19,8 @@ with open(csv_file_path, 'r', encoding='utf-8') as csv_file:
     # Insert data into the table
     for row in csv_reader:
         cursor.execute('''
-            INSERT OR IGNORE INTO wishlist_model (WishlistID, WishlistName, Username)
-            VALUES (?, ?, ?);
+            INSERT OR IGNORE INTO wishlist_contents_model (WishlistID, ISBN)
+            VALUES (?, ?);
             ''', row)
 
 # Commit the changes and close the connection

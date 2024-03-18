@@ -39,6 +39,6 @@ class WishlistSchema(Schema):
     WishlistName = fields.Str()
     Username = fields.Str(required=True)
 
-class WishlistSchema(Schema):
+class WishlistContentsSchema(Schema):
     WishlistID = fields.Int(required=True)
     ISBN = fields.Str(required=True)

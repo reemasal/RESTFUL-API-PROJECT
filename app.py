@@ -11,6 +11,7 @@ from resources.book import blp as BookBlueprint
 from resources.profile import blp as ProfileBlueprint
 from resources.rate import blp as RatingBlueprint
 from resources.wishlist import blp as WishlistBlueprint
+from resources.authors import blp as AuthorBlueprint
 
 def create_app(db_url=None):
     app = Flask(__name__)
@@ -35,5 +36,5 @@ def create_app(db_url=None):
     api.register_blueprint(RatingBlueprint)
     api.register_blueprint(ProfileBlueprint)
     api.register_blueprint(WishlistBlueprint)
-
+    api.register_blueprint(AuthorBlueprint)
     return app

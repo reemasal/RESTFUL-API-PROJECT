@@ -7,7 +7,7 @@ cursor = conn.cursor()
 
 
 # Path to your CSV file
-csv_file_path = './books.csv'
+csv_file_path = './authors.csv'
 
 # Open and read the CSV file
 with open(csv_file_path, 'r', encoding='utf-8') as csv_file:
@@ -19,8 +19,8 @@ with open(csv_file_path, 'r', encoding='utf-8') as csv_file:
     # Insert data into the table
     for row in csv_reader:
         cursor.execute('''
-            INSERT INTO book_model (ISBN, Name, Description, Price, AuthorID, Genre, Publisher, YearPublished, Sold, Rating)
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            INSERT INTO author_model (AuthorID, FirstName, LastName, Books, Biography, Publisher)
+            VALUES (?, ?, ?, ?, ?, ?)
             ''', row)
 
 

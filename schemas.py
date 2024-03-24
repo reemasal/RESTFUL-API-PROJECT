@@ -6,12 +6,21 @@ class BookDetailsSchema(Schema):
     Name = fields.Str()
     Description = fields.Str()
     Price = fields.Int()
-    Author = fields.Str()
+    AuthorID = fields.Str()
     Genre = fields.Str()
     Publisher = fields.Str()
     YearPublished = fields.Str()
     Sold =fields.Int()
     Rating = fields.Int()
+
+class AuthorSchema(Schema):
+    AuthorID = fields.Str(required=True)
+    FirstName = fields.Str()
+    LastName = fields.Str()
+    Books = fields.Str()
+    Biography = fields.Str()
+    Publisher = fields.Str()
+    
 
 class ProfileManagement(Schema):
     Username = fields.Str(required = True)
@@ -36,9 +45,6 @@ class RatingsSchema(Schema):
 
 class WishlistSchema(Schema):
     WishlistID = fields.Int(required=True)
-    WishlistName = fields.Str()
-    Username = fields.Str(required=True)
-
-class WishlistContentsSchema(Schema):
-    WishlistID = fields.Int(required=True)
-    ISBN = fields.Str(required=True)
+    ISBN0 = fields.Str()
+    ISBN1 = fields.Str()
+    ISBN2 = fields.Str()

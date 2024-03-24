@@ -1,32 +1,32 @@
-ISBN,Name,Description,Price,Author,Genre,Publisher,YearPublished,Sold,Rating
-978-0-14-103614-4,To Kill a Mockingbird,Classic novel by Harper Lee,25,Harper Lee,Fiction,Penguin Books,1960,1000,4
-978-0-345-39180-8,1984,Dystopian fiction by George Orwell,20,George Orwell,Fiction,Vintage Books,1949,800,5
-978-0-06-112008-4,The Great Gatsby,American classic by F. Scott Fitzgerald,30,F. Scott Fitzgerald,Fiction,Scribner,1925,900,5
-978-0-14-118104-5,One Hundred Years of Solitude,Magical realism by Gabriel Garcia Marquez,22,Gabriel Garcia Marquez,Fiction,Penguin Books,1967,1100,4
-978-0-553-21311-6,The Hobbit,Fantasy novel by J.R.R. Tolkien,28,J.R.R. Tolkien,Fantasy,Houghton Mifflin Harcourt,1937,950,5
-978-0-452-28423-4,The Hitchhiker's Guide to the Galaxy,Science fiction comedy by Douglas Adams,15,Douglas Adams,Science Fiction,Del Rey Books,1979,850,4
-978-0-679-72126-2,Brave New World,Dystopian novel by Aldous Huxley,24,Aldous Huxley,Fiction,Harper & Brothers,1932,1000,5
-978-0-7432-7356-0,The Da Vinci Code,Mystery thriller by Dan Brown,35,Dan Brown,Mystery,DoubleDay,2003,1200,3
-978-0-575-04606-1,Harry Potter and the Philosopher's Stone,Fantasy novel by J.K. Rowling,40,J.K. Rowling,Fantasy,Bloomsbury Publishing,1997,1500,5
-978-0-06-147710-7,The Alchemist,Philosophical novel by Paulo Coelho,21,Paulo Coelho,Fiction,HarperOne,1988,800,4
-978-0-312-35983-0,Ender's Game,Science fiction by Orson Scott Card,27,Orson Scott Card,Science Fiction,Tor Books,1985,900,4
-978-0-06-112008-5,The Lord of the Rings,High fantasy by J.R.R. Tolkien,50,J.R.R. Tolkien,Fantasy,Allen & Unwin,1954,1200,5
-978-0-451-52493-5,Fahrenheit 451,Dystopian novel by Ray Bradbury,19,Ray Bradbury,Fiction,Ballantine Books,1953,950,4
-978-0-7432-4722-1,Angels & Demons,Mystery thriller by Dan Brown,32,Dan Brown,Mystery,Atria Books,2000,1100,3
-978-0-7434-9271-5,The Kite Runner,Historical drama by Khaled Hosseini,23,Khaled Hosseini,Fiction,Riverhead Books,2003,1000,4
-978-0-330-25864-8,Animal Farm,Allegorical novella by George Orwell,17,George Orwell,Fiction,Secker and Warburg,1945,800,5
-978-0-8129-8131-3,A Song of Ice and Fire: A Game of Thrones,Fantasy novel by George R.R. Martin,45,George R.R. Martin,Fantasy,Bantam Books,1996,1300,5
-978-0-06-112008-6,Pride and Prejudice,Romantic novel by Jane Austen,26,Jane Austen,Romance,Thomas Egerton,1813,1200,4
-978-0-14-312639-3,The Road,Post-apocalyptic novel by Cormac McCarthy,29,Cormac McCarthy,Fiction,Knopf,2006,950,4
-978-0-679-72243-6,Slaughterhouse-Five,Science fiction by Kurt Vonnegut,21,Kurt Vonnegut,Science Fiction,Dial Press,1969,900,4
-978-0-553-38516-1,The Shining,Horror novel by Stephen King,33,Stephen King,Horror,Doubleday,1977,1100,4
-978-0-06-057377-5,The Road to Serfdom,Political philosophy by Friedrich Hayek,18,Friedrich Hayek,Non-Fiction,University of Chicago Press,1944,800,5
-978-0-399-13131-4,The Girl with the Dragon Tattoo,Crime thriller by Stieg Larsson,28,Stieg Larsson,Mystery,Vintage Books,2005,1200,3
-978-0-375-50190-9,The Hunger Games,Dystopian novel by Suzanne Collins,35,Suzanne Collins,Science Fiction,Scholastic Corporation,2008,1000,4
-978-0-452-28425-8,Life of Pi,Adventure novel by Yann Martel,24,Yann Martel,Adventure,Knopf Canada,2001,1100,4
-978-0-553-21461-8,The Two Towers,High fantasy by J.R.R. Tolkien,30,J.R.R. Tolkien,Fantasy,Allen & Unwin,1954,1200,5
-978-0-307-47640-1,The Help,Historical novel by Kathryn Stockett,22,Kathryn Stockett,Fiction,Amy Einhorn Books,2009,950,4
-978-0-451-52494-2,The Martian,Science fiction novel by Andy Weir,26,Andy Weir,Science Fiction,Crown Publishing Group,2011,1000,5
-978-0-345-47699-1,The Girl on the Train,Thriller novel by Paula Hawkins,19,Paula Hawkins,Thriller,Riverhead Books,2015,1200,3
-978-0-440-53603-6,The Stand,Post-apocalyptic horror by Stephen King,32,Stephen King,Horror,Doubleday,1978,1100,4
-978-0-307-47640-1,The Fellowship of the Ring,High fantasy by J.R.R. Tolkien,28,J.R.R. Tolkien,Fantasy,Allen & Unwin,1954,1200,5
+ISBN,Name,Description,Price,AuthorID,Genre,Publisher,YearPublished,Sold,Rating
+978-0-014-103614-4,To Kill a Mockingbird,Classic novel by Harper Lee,25,1,Fiction,Penguin Books,1960,1000,4
+978-0-345-39180-8,1984,Dystopian fiction by George Orwell,20,2,Fiction,Vintage Books,1949,800,5
+978-0-006-112008-4,The Great Gatsby,American classic by F. Scott Fitzgerald,30,3,Fiction,Scribner,1925,900,5
+978-0-014-118104-5,One Hundred Years of Solitude,Magical realism by Gabriel Garcia Marquez,22,4,Fiction,Penguin Books,1967,1100,4
+978-0-553-21311-6,The Hobbit,Fantasy novel by J.R.R. Tolkien,28,5,Fantasy,Houghton Mifflin Harcourt,1937,950,5
+978-0-452-28423-4,The Hitchhiker's Guide to the Galaxy,Science fiction comedy by Douglas Adams,15,6,Science Fiction,Del Rey Books,1979,850,4
+978-0-679-72126-2,Brave New World,Dystopian novel by Aldous Huxley,24,7,Fiction,Harper & Brothers,1932,1000,5
+978-0-7432-7356-0,The Da Vinci Code,Mystery thriller by Dan Brown,35,8,Mystery,DoubleDay,2003,1200,3
+978-0-575-04606-1,Harry Potter and the Philosopher's Stone,Fantasy novel by J.K. Rowling,40,9,Fantasy,Bloomsbury Publishing,1997,1500,5
+978-0-006-147710-7,The Alchemist,Philosophical novel by Paulo Coelho,21,10,Fiction,HarperOne,1988,800,4
+978-0-312-35983-0,Ender's Game,Science fiction by Orson Scott Card,27,11,Science Fiction,Tor Books,1985,900,4
+978-0-006-112008-5,The Lord of the Rings,High fantasy by J.R.R. Tolkien,50,5,Fantasy,Allen & Unwin,1954,1200,5
+978-0-451-52493-5,Fahrenheit 451,Dystopian novel by Ray Bradbury,19,12,Fiction,Ballantine Books,1953,950,4
+978-0-7432-4722-1,Angels & Demons,Mystery thriller by Dan Brown,32,8,Mystery,Atria Books,2000,1100,3
+978-0-7434-9271-5,The Kite Runner,Historical drama by Khaled Hosseini,23,13,Fiction,Riverhead Books,2003,1000,4
+978-0-330-25864-8,Animal Farm,Allegorical novella by George Orwell,17,2,Fiction,Secker and Warburg,1945,800,5
+978-0-8129-8131-3,A Song of Ice and Fire: A Game of Thrones,Fantasy novel by George R.R. Martin,45,14,Fantasy,Bantam Books,1996,1300,5
+978-0-006-112008-6,Pride and Prejudice,Romantic novel by Jane Austen,26,15,Romance,Thomas Egerton,1813,1200,4
+978-0-014-312639-3,The Road,Post-apocalyptic novel by Cormac McCarthy,29,16,Fiction,Knopf,2006,950,4
+978-0-679-72243-6,Slaughterhouse-Five,Science fiction by Kurt Vonnegut,21,17,Science Fiction,Dial Press,1969,900,4
+978-0-553-38516-1,The Shining,Horror novel by Stephen King,33,18,Horror,Doubleday,1977,1100,4
+978-0-006-057377-5,The Road to Serfdom,Political philosophy by Friedrich Hayek,18,19,Non-Fiction,University of Chicago Press,1944,800,5
+978-0-399-13131-4,The Girl with the Dragon Tattoo,Crime thriller by Stieg Larsson,28,20,Mystery,Vintage Books,2005,1200,3
+978-0-375-50190-9,The Hunger Games,Dystopian novel by Suzanne Collins,35,21,Science Fiction,Scholastic Corporation,2008,1000,4
+978-0-452-28425-8,Life of Pi,Adventure novel by Yann Martel,24,22,Adventure,Knopf Canada,2001,1100,4
+978-0-553-21461-8,The Two Towers,High fantasy by J.R.R. Tolkien,30,5,Fantasy,Allen & Unwin,1954,1200,5
+978-0-307-47640-1,The Help,Historical novel by Kathryn Stockett,22,23,Fiction,Amy Einhorn Books,2009,950,4
+978-0-451-52494-2,The Martian,Science fiction novel by Andy Weir,26,24,Science Fiction,Crown Publishing Group,2011,1000,5
+978-0-345-47699-1,The Girl on the Train,Thriller novel by Paula Hawkins,19,25,Thriller,Riverhead Books,2015,1200,3
+978-0-440-53603-6,The Stand,Post-apocalyptic horror by Stephen King,32,18,Horror,Doubleday,1978,1100,4
+978-0-553-21105-4,The Fellowship of the Ring,High fantasy by J.R.R. Tolkien,28,5,Fantasy,Allen & Unwin,1954,1200,5

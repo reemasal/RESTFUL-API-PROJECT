@@ -12,6 +12,8 @@ from resources.profile import profile_blp as ProfileBlueprint
 from resources.profile import new_user_blp as NewUserBlueprint
 from resources.rate import blp as RatingBlueprint
 from resources.wishlist import blp as WishlistBlueprint
+from resources.authors import blp as AuthorBlueprint
+from resources.BookBrowsing import blp as BookBrowsing
 
 def create_app(db_url=None):
     app = Flask(__name__)
@@ -35,7 +37,9 @@ def create_app(db_url=None):
     api.register_blueprint(BookBlueprint)
     api.register_blueprint(RatingBlueprint)
     api.register_blueprint(ProfileBlueprint)
-    api.register_blueprint(WishlistBlueprint)
+    api.register_blueprint(WishlistBlueprint)    
     api.register_blueprint(NewUserBlueprint)
+    api.register_blueprint(AuthorBlueprint)
+    api.register_blueprint(BookBrowsing)
 
     return app

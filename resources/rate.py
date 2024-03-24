@@ -7,7 +7,7 @@ from sqlalchemy.exc import SQLAlchemyError
 from models import RateModel
 from schemas import RatingsSchema
 
-blp = Blueprint("Ratings", __name__, description="Operations on book ratings and comments")
+blp = Blueprint("Ratings", __name__, description="Operations on book ratings")
 
 @blp.route("/ratings") # return everythomg from every data entry in ratings.csv
 class RatingList(MethodView):

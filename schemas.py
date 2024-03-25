@@ -45,7 +45,7 @@ class RatingsSchema(Schema):
 class WishlistSchema(Schema):
     WishlistID = fields.Int()
     WishlistName = fields.Str()
-    UserID = fields.Str()
+    Username = fields.Str()
 
 class ContentsSchema(Schema):
     Row = fields.Int()

@@ -6,8 +6,8 @@ class WishlistModel(db.Model):
     WishlistName = db.Column(db.String(50))
     Username = db.Column(db.String)
 
-
-class WishlistContentsModel(db.Model):
+class ContentsModel(db.Model):
     # Create DB columns
-    WishlistID = db.Column(db.String, primary_key=True)
-    ISBN = db.Column(db.String, primary_key=True)
+    Row = db.Column(db.Integer, primary_key=True)
+    WishlistID = db.Column(db.String)
+    ISBN = db.Column(db.String)

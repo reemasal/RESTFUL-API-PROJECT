@@ -9,16 +9,11 @@ from schemas import RatingsSchema
 
 blp = Blueprint("Ratings", __name__, description="Operations on book ratings and comments")
 
-<<<<<<< Updated upstream
-@blp.route("/ratings")
-=======
 @blp.route("/ratings") # return everything from every data entry in ratings.csv
->>>>>>> Stashed changes
 class RatingList(MethodView):
     @blp.response(200, RatingsSchema(many=True))
     def get(self):
         return RateModel.query.all()
-<<<<<<< Updated upstream
     
 @blp.route("/ratings/<string:isbn>")
 class BookListItem(MethodView): # get all comments for one book
@@ -33,31 +28,6 @@ class BookListItem(MethodView): # get all comments for one book
 
             # Return comments in JSON format
             return jsonify(comments)
-=======
-
-@blp.route("/averageRating/<string:isbn>") # get average rating for one book
-class AverageRating(MethodView):
-    @blp.response(200, RatingsSchema(many=True))
-    def get(self, isbn):
-        try:
-            # Fetch ratings for the specified ISBN
-            ratings = RateModel.query.filter_by(ISBN=isbn).with_entities(RateModel.Rating).all()
-
-            # Extract ratings from the list of tuples
-            ratings = [rating[0] for rating in ratings]
-            
-            ratingsTotal = 0.0 # add up value of all ratings into this variable
-            ratingsCount = len(ratings) * 1.0 # number of ratings for a book
-            
-            for rating in ratings:
-                ratingsTotal += rating
-
-            # Get the average rating
-            average_rating = ratingsTotal / ratingsCount
-
-            # Return average rating
-            return jsonify(average_rating)
->>>>>>> Stashed changes
         except SQLAlchemyError:
             # Handle any database errors
             abort(500, message="Database error occurred.")

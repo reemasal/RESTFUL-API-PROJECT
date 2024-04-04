@@ -43,6 +43,12 @@ class RatingsSchema(Schema):
     CommentDate = fields.Str()
     Comment = fields.Str()
 
+class CommentsSchema(Schema):
+    UserID = fields.Str(required = True)
+    ISBN = fields.Str() # book id
+    CommentDate = fields.Str()
+    Comment = fields.Str()
+
 class WishlistSchema(Schema):
     WishlistID = fields.Int(required=True)
     ISBN0 = fields.Str()

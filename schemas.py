@@ -5,7 +5,7 @@ class BookDetailsSchema(Schema):
     ISBN = fields.Str(required=True) # book id
     Name = fields.Str()
     Description = fields.Str()
-    Price = fields.Int()
+    Price = fields.Float()
     AuthorID = fields.Str()
     Genre = fields.Str()
     Publisher = fields.Str()

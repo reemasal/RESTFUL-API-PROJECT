@@ -7,7 +7,7 @@ class BookModel(db.Model):
     ISBN = db.Column(db.String, primary_key=True)
     Name = db.Column(db.String(100))
     Description = db.Column(db.String)
-    Price = db.Column(db.Integer, nullable=True)
+    Price = db.Column(db.Float, nullable=True)
     AuthorID = db.Column(db.String, db.ForeignKey('author_model.AuthorID'))
     Genre = db.Column(db.String)
     Publisher = db.Column(db.String)

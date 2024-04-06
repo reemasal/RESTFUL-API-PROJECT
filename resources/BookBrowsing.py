@@ -30,3 +30,16 @@ class BookList(MethodView):
     def get(self, rating):
         response = BookModel.query.filter(BookModel.Rating>=rating)
         return response
+    
+@blp.route("/books/discount/<string:publisher>")
+class BookList(MethodView):
+    @blp.response(200, BookDetailsSchema(many=True))
+    def put(self, publisher):
+        discount = int(request.args.get('discount'))
+        BookModel.query.filter(BookModel.Publisher==publisher).\
+            update({BookModel.Price: BookModel.Price*((100-discount)/100)}, synchronize_session=False)
+        allPublisherBooks = BookModel.query.filter(BookModel.Publisher==publisher)
+        db.session.commit()
+        return allPublisherBooks
+    
+    

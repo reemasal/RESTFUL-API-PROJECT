@@ -7,7 +7,7 @@ cursor = conn.cursor()
 
 
 # Path to your CSV file
-csv_file_path = './ratings.csv'
+csv_file_path = './comments.csv'
 
 # Open and read the CSV file
 with open(csv_file_path, 'r', encoding='utf-8') as csv_file:
@@ -19,7 +19,7 @@ with open(csv_file_path, 'r', encoding='utf-8') as csv_file:
     # Insert data into the table
     for row in csv_reader:
         cursor.execute('''
-            INSERT OR IGNORE INTO rate_model (UserID, ISBN, RatingDate, Rating)
+            INSERT OR IGNORE INTO comment_model (UserID, ISBN, CommentDate, Comment)
             VALUES (?, ?, ?, ?)
             ''', row)
 

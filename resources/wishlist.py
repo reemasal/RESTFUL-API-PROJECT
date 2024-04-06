@@ -31,7 +31,8 @@ class WishlistGet(MethodView):
     def get(self, wishlistID):
         wishlist = ContentsModel.query.filter_by(WishlistID=wishlistID).all()
         return wishlist
-    
+        
+
 @blp.route("/wishlist/update")
 class WishlistAdd(MethodView):
     @blp.response(201, ContentsSchema)
@@ -47,8 +48,8 @@ class WishlistAdd(MethodView):
             abort(500, message = "An error occured while adding this book.")
         return wishlist_add
 
-'''    
-    @blp.response(200)  # source of problem?
+ 
+    @blp.response(204)  # source of problem?
     def delete(self):
         wishlist_data = request.get_json()
         wishlist_delete = ContentsModel(**wishlist_data)
@@ -59,5 +60,4 @@ class WishlistAdd(MethodView):
             abort(400, message = "This book is not on your wishlist.")
         except SQLAlchemyError:
             abort(500, message = "An error occured while deleting this book.")
-        return wishlist_delete
-'''
+        return '', 204

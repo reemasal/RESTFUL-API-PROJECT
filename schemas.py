@@ -47,11 +47,11 @@ class CommentsSchema(Schema):
     Comment = fields.Str()
 
 class WishlistSchema(Schema):
-    WishlistID = fields.Int()
+    WishlistID = fields.Int(required = True)
     WishlistName = fields.Str()
     Username = fields.Str()
 
 class ContentsSchema(Schema):
-    Row = fields.Int()
+    Row = fields.Int(required = True)
     WishlistID = fields.Int()
     ISBN = fields.Str()

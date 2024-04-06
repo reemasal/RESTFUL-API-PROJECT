@@ -9,5 +9,5 @@ class WishlistModel(db.Model):
 class ContentsModel(db.Model):
     # Create DB columns
     Row = db.Column(db.Integer, primary_key=True)
-    WishlistID = db.Column(db.String)
+    WishlistID = db.Column(db.Integer)
     ISBN = db.Column(db.String)

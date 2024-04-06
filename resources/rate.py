@@ -7,16 +7,26 @@ from sqlalchemy.exc import SQLAlchemyError
 from models import RateModel
 from schemas import RatingsSchema
 
-blp = Blueprint("Ratings", __name__, description="Operations on book ratings")
+blp = Blueprint("Ratings", __name__, description="Operations on book ratings and comments")
 
-@blp.route("/ratings") # return everythomg from every data entry in ratings.csv
+@blp.route("/ratings") # return everything from every data entry in ratings.csv
 class RatingList(MethodView):
     @blp.response(200, RatingsSchema(many=True))
     def get(self):
         return RateModel.query.all()
     
-@blp.route("/ratings/<string:isbn>") # get all comments for one book
-class CommentListOneBook(MethodView):
+@blp.route("/newRating") # post a new rating
+class NewRating(MethodView):
+    @blp.response(201, RatingsSchema(many=False))
+    def post(self):
+        input_data = request.get_json()
+        newRating = RateModel(**input_data)
+        db.session.add(newRating)
+        db.session.commit()
+        return newRating
+    
+@blp.route("/ratings/<string:isbn>")
+class BookListItem(MethodView): # get all comments for one book
     @blp.response(200, RatingsSchema(many=True))
     def get(self, isbn):
         try:

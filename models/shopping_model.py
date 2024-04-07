@@ -1,34 +1,24 @@
-import psycopg2
+from app import db
 
-# ElephantSQL database URL:
-DATABASE_URL = 'postgres://khxdvvyv:guMe0P0531KG62ekc3rKCTtRAEWi0qDr@baasu.db.elephantsql.com/khxdvvyv'
-
-def get_db_connection():
-    conn = psycopg2.connect(DATABASE_URL)
-    return conn
+class CartItem(db.Model):
+    __tablename__ = 'cart_items'
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.String(120), nullable=False)
+    book_id = db.Column(db.String(120), nullable=False)
+    quantity = db.Column(db.Integer, nullable=False)
 
 def add_book_to_cart(user_id, book_id, quantity):
-    conn = get_db_connection()
-    cur = conn.cursor()
-    cur.execute('INSERT INTO CartItems (UserID, BookID, Quantity) VALUES (%s, %s, %s)',
-                (user_id, book_id, quantity))
-    conn.commit()
-    cur.close()
-    conn.close()
+    new_cart_item = CartItem(user_id=user_id, book_id=book_id, quantity=quantity)
+    db.session.add(new_cart_item)
+    db.session.commit()
 
 def remove_book_from_cart(cart_item_id):
-    conn = get_db_connection()
-    cur = conn.cursor()
-    cur.execute('DELETE FROM CartItems WHERE CartItemID = %s', (cart_item_id,))
-    conn.commit()
-    cur.close()
-    conn.close()
+    cart_item = CartItem.query.filter_by(id=cart_item_id).first()
+    if cart_item:
+        db.session.delete(cart_item)
+        db.session.commit()
 
 def calculate_cart_subtotal(user_id):
-    conn = get_db_connection()
-    cur = conn.cursor()
-    cur.execute('SELECT SUM(b.Price * ci.Quantity) FROM CartItems ci JOIN Books b ON ci.BookID = b.BookID WHERE ci.UserID = %s', (user_id,))
-    subtotal = cur.fetchone()[0]
-    cur.close()
-    conn.close()
-    return subtotal
+    subtotal = db.session.query(db.func.sum(CartItem.quantity * 10)).filter_by(user_id=user_id).scalar()
+    return subtotal if subtotal else 0
+

@@ -6,6 +6,7 @@ class WishlistModel(db.Model):
     WishlistName = db.Column(db.String(50))
     Username = db.Column(db.String)
 
+
 class ContentsModel(db.Model):
     # Create DB columns
     Row = db.Column(db.Integer, primary_key=True)

@@ -23,7 +23,7 @@ class WishlistAdd(MethodView):
             abort(400, message = "This wishlist ID is already in use.")
         except SQLAlchemyError:
             abort(500, message = "An error occured while making your new wishlist.")
-        return wishlist_new
+        return 201
 
 @blp.route("/wishlist/<string:wishlistID>")
 class WishlistGet(MethodView):
@@ -31,7 +31,6 @@ class WishlistGet(MethodView):
     def get(self, wishlistID):
         wishlist = ContentsModel.query.filter_by(WishlistID=wishlistID).all()
         return wishlist
-        
 
 @blp.route("/wishlist/update")
 class WishlistAdd(MethodView):
@@ -46,8 +45,7 @@ class WishlistAdd(MethodView):
             abort(400, message = "This book is already on your wishlist.")
         except SQLAlchemyError:
             abort(500, message = "An error occured while adding this book.")
-        return wishlist_add
-
+        return 201
  
     @blp.response(204)  # source of problem?
     def delete(self):

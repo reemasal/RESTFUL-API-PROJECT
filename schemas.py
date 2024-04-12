@@ -21,7 +21,6 @@ class AuthorSchema(Schema):
     Biography = fields.Str()
     Publisher = fields.Str()
     
-
 class ProfileManagement(Schema):
     Username = fields.Str(required = True)
     Password = fields.Str(required = True)
@@ -48,7 +47,11 @@ class CommentsSchema(Schema):
     Comment = fields.Str()
 
 class WishlistSchema(Schema):
-    WishlistID = fields.Int(required=True)
-    ISBN0 = fields.Str()
-    ISBN1 = fields.Str()
-    ISBN2 = fields.Str()
+    WishlistID = fields.Int(required = True)
+    WishlistName = fields.Str()
+    Username = fields.Str()
+
+class ContentsSchema(Schema):
+    Row = fields.Int(required = True)
+    WishlistID = fields.Int()
+    ISBN = fields.Str()
